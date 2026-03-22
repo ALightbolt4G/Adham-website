@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adham Hossam — Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Arabic:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <link rel="stylesheet" href="styles/gamification.css">
+    <link rel="stylesheet" href="styles/interactive.css">
+</head>
+
+<body class="loading">
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">&lt;Adham/&gt;</div>
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
+    </div>
+
+    <!-- Achievements Sidebar -->
+    <div class="achievements-sidebar" id="achievementsSidebar">
+        <div class="sidebar-header">
+            <h3 data-i18n="ach-title">Achievements</h3>
+            <button class="sidebar-close" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-content">
+            <div class="xp-section card-widget">
+                <span class="xp-label">Dev Level <span id="xpLevel">1</span></span>
+                <div class="xp-bar">
+                    <div class="xp-fill" id="xpFill"></div>
+                </div>
+                <p class="xp-needed" id="xpNeeded">Next level: 100 XP</p>
+            </div>
+            <div class="badges-grid" id="badgesContainer">
+                <!-- Badges will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="achievement-toast" id="achievementToast">
+        <div class="toast-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="toast-content">
+            <h4>Achievement Unlocked!</h4>
+            <p id="achievementText">Explorer</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#home" class="logo">
+            <span class="logo-bracket">&lt;</span>Adham<span class="logo-bracket">/&gt;</span>
+        </a>
+        <nav class="navigation">
+            <a href="#services" data-text="Services" data-i18n="nav-services">Services</a>
+            <a href="#skills" data-text="Skills" data-i18n="nav-skills">Skills</a>
+            <a href="#projects" data-text="Projects" data-i18n="nav-projects">Projects</a>
+            <a href="#contact" class="nav-cta" data-i18n="nav-hire">Hire Me</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fa-solid fa-sun" id="themeIcon"></i>
+            </button>
+            <button class="ach-toggle" id="achToggle" aria-label="Toggle achievements">
+                <i class="fa-solid fa-trophy"></i>
+            </button>
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button id="langEN" class="lang-btn active">EN</button>
+                <span class="lang-divider">|</span>
+                <button id="langAR" class="lang-btn">AR</button>
+            </div>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <main class="widget-grid">
+        <!-- Hero Section (Identity Widget) -->
+        <section class="hero widget hero-widget" id="home">
+            <div class="hero-bg">
+                <div class="grid-overlay"></div>
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="noise"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="tag-dot"></span>
+                    Available for freelance work
+                </div>
+                <h1 class="hero-title">
+                    <span class="line" data-i18n="hero-i-build">I build</span>
+                    <span class="line accent-line" data-i18n="hero-exp">digital<br>experiences.</span>
+                </h1>
+                <p class="hero-sub" data-i18n="hero-sub">Full Stack Developer crafting modern web applications — from
+                    pixel-perfect UIs to powerful backends that scale.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary"><span data-i18n="view-projects">View Projects</span> <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-ghost" data-i18n="lets-talk">Let's Talk</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/ALightbolt4G" target="_blank" title="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/adham-hossam-b4a317380" target="_blank" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://youtube.com/@alightbolt4g295" target="_blank" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/alight.bolt.4g.16100" target="_blank" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="window-title">adham.js</span>
+                    </div>
+                    <div class="code-content">
+                        <div class="code-line"><span class="kw">const</span> <span class="var">developer</span> = {
+                        </div>
+                        <div class="code-line indent"><span class="key">name</span>: <span class="str">"Adham
+                                Hossam"</span>,</div>
+                        <div class="code-line indent"><span class="key">role</span>: <span class="str">"Full Stack
+                                Dev"</span>,</div>
+                        <div class="code-line indent"><span class="key">stack</span>: [</div>
+                        <div class="code-line indent2"><span class="str">"React"</span>, <span
+                                class="str">"Node.js"</span>,
+                        </div>
+                        <div class="code-line indent2"><span class="str">"Express"</span>, <span
+                                class="str">"PostgreSQL"</span></div>
+                        <div class="code-line indent">],</div>
+                        <div class="code-line indent"><span class="key">available</span>: <span class="bool">true</span>
+                        </div>
+                        <div class="code-line">};</div>
+                        <div class="code-line blink-line"><span class="cmt">// Let's build something.</span><span
+                                class="cursor-blink">|</span></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#services" class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </a>
+        </section>
+
+        <!-- Services -->
+        <section class="services widget" id="services">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <h2 data-i18n="section-01">What I Do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-brands fa-react"></i></div>
+                    <div class="service-body">
+                        <h3 data-i18n="serv-front">Frontend Development</h3>
+                        <p data-i18n="serv-front-p">Pixel-perfect, responsive interfaces with React.js. Fast, accessible
+                            and
+                            visually stunning.</p>
+                        <div class="service-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Interactive Terminal Service -->
+                <div class="service-item special-service" id="terminal-trigger">
+                    <div class="service-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <div class="service-body">
+                        <h3 data-i18n="serv-cli">Command Line Interface</h3>
+                        <p data-i18n="serv-cli-p">Building powerful CLI tools and interactive terminal experiences for
+                            developers.</p>
+                        <div class="service-tags">
+                            <span>Node.js</span><span>Commander</span><span>Inquirer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+                    <div class="service-body">
+                        <h3 data-i18n="serv-back">Backend Development</h3>
+                        <p data-i18n="serv-back-p">Robust server-side APIs and architecture built with Node.js, Express,
+                            and
+                            modern databases.</p>
+                        <div class="service-tags">
+                            <span>Node.js</span><span>Express.js</span><span>REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                    <div class="service-body">
+                        <h3 data-i18n="serv-db">Database Design</h3>
+                        <p data-i18n="serv-db-p">Structured, efficient database schemas with PostgreSQL and Supabase for
+                            scalable applications.</p>
+                        <div class="service-tags">
+                            <span>PostgreSQL</span><span>Supabase</span><span>Data Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-film"></i></div>
+                    <div class="service-body">
+                        <h3 data-i18n="serv-vid">Video Editing</h3>
+                        <p data-i18n="serv-vid-p">High-quality video production and editing with Adobe Premiere Pro and
+                            After Effects.</p>
+                        <div class="service-tags">
+                            <span>Premiere Pro</span><span>After Effects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal & Translator Section -->
+        <section class="interactive-lab widget" id="lab">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <h2 data-i18n="section-02">Interactive Lab</h2>
+            </div>
+            <div class="lab-grid">
+                <!-- Terminal -->
+                <div class="lab-card terminal-card glass-card">
+                    <div class="card-header">
+                        <div class="header-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="header-title">adham-hossam-cli</span>
+                    </div>
+                    <div class="terminal-body" id="terminalOutput">
+                        <div class="line" data-i18n="term-welcome">Welcome to Adham's interactive terminal.</div>
+                        <div class="line" data-i18n="term-help">Type <span class="cmd">help</span> to see available
+                            commands.</div>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">guest@portfolio:~$</span>
+                        <input type="text" id="terminalInput" spellcheck="false" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Translator -->
+                <div class="lab-card translator-card glass-card">
+                    <div class="card-header">
+                        <span class="header-title" data-i18n="trans-title">ATE / ETA Translator</span>
+                    </div>
+                    <div class="translator-body">
+                        <div class="translator-controls">
+                            <button class="lang-toggle active" id="btnETA">EN <i
+                                    class="fa-solid fa-arrow-right-arrow-left"></i> AR</button>
+                            <button class="lang-toggle" id="btnATE">AR <i
+                                    class="fa-solid fa-arrow-right-arrow-left"></i>
+                                EN</button>
+                        </div>
+                        <div class="trans-group">
+                            <textarea id="transInput" placeholder="Enter English text..."></textarea>
+                        </div>
+                        <div class="trans-divider">
+                            <div class="pulse-line"></div>
+                        </div>
+                        <div class="trans-group">
+                            <div id="transOutput" class="output-area">Translation will appear here...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills-section widget" id="skills">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <h2 data-i18n="section-03">Technical Stack</h2>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skill-group">
+                    <h4><span class="skill-dot frontend-dot"></span> Frontend</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><span>React.js</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar"><span>JavaScript</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar"><span>HTML / CSS</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4><span class="skill-dot backend-dot"></span> Backend</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><span>Node.js</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar"><span>Express.js</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar"><span>REST APIs</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4><span class="skill-dot db-dot"></span> Database</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><span>PostgreSQL</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar"><span>Supabase</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Radar -->
+        <section class="radar-section widget" id="radar">
+            <div class="radar-container glass-card">
+                <div class="radar-info">
+                    <h3 data-i18n="radar-title">Innovation Radar</h3>
+                    <p>A visualization of my current tech focus and research areas.</p>
+                    <div class="radar-legend">
+                        <div class="legend-item"><span class="dot adopt"></span> Adopt</div>
+                        <div class="legend-item"><span class="dot trial"></span> Trial</div>
+                        <div class="legend-item"><span class="dot assess"></span> Assess</div>
+                    </div>
+                </div>
+                <div class="radar-viz" id="techRadar">
+                    <!-- SVG injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects-section widget" id="projects">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <h2 data-i18n="section-04">Selected Work</h2>
+            </div>
+            <div class="projects-list">
+
+                <!-- Project: SN Pharmacy -->
+                <div class="project-row featured">
+                    <div class="project-meta">
+                        <span class="project-num">01</span>
+                        <div class="status-pills">
+                            <span class="status-pill active">LIVE</span>
+                            <span class="project-tag">Full Stack</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3>SN Pharmacy — Online Order System</h3>
+                        <p>A full-featured online pharmacy ordering platform. Customers can browse products, place
+                            orders,
+                            and track them in real-time. Built with Express.js on the backend and PostgreSQL database
+                            for
+                            robust data management.</p>
+                        <div class="project-stack">
+                            <span>Express.js</span><span>PostgreSQL</span><span>Node.js</span><span>REST API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://snpharmacry.netlify.app/" target="_blank" class="proj-link primary"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-visual pharmacy-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content">
+                                <div class="ph-icon"><i class="fa-solid fa-pills"></i></div>
+                                <div class="ph-label">SN Pharmacy</div>
+                                <div class="ph-sub">Online Order System</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Statistics Dashboard -->
+                <div class="project-row">
+                    <div class="project-meta">
+                        <span class="project-num">02</span>
+                        <div class="status-pills">
+                            <span class="status-pill active">STABLE</span>
+                            <span class="project-tag">Full Stack</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Statistics Dashboard</h3>
+                        <p>A responsive data visualization dashboard built with React.js featuring interactive charts
+                            and
+                            real-time data display. Powered by Express.js backend and Supabase database.</p>
+                        <div class="project-stack">
+                            <span>React.js</span><span>Express.js</span><span>Supabase</span><span>Chart.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://statsdev.netlify.app/statistics" target="_blank"
+                                class="proj-link primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                                Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-visual stats-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content stats-frame">
+                                <div class="bar-chart-demo">
+                                    <div class="bar-demo" style="--h:60%"></div>
+                                    <div class="bar-demo" style="--h:80%"></div>
+                                    <div class="bar-demo" style="--h:45%"></div>
+                                    <div class="bar-demo" style="--h:90%"></div>
+                                    <div class="bar-demo" style="--h:65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Restaurant Landing Page -->
+                <div class="project-row">
+                    <div class="project-meta">
+                        <span class="project-num">03</span>
+                        <span class="project-tag">Frontend + UI Design</span>
+                    </div>
+                    <div class="project-details">
+                        <h3>Raslan Koshary — Restaurant Landing Page</h3>
+                        <p>A fully responsive restaurant landing page with modern design, user-friendly interface, and
+                            smooth animations. Built for a real local restaurant business.</p>
+                        <div class="project-stack">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://raslankoshary.com" target="_blank" class="proj-link primary"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-visual rest-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content">
+                                <div class="ph-icon"><i class="fa-solid fa-utensils"></i></div>
+                                <div class="ph-label">Raslan Koshary</div>
+                                <div class="ph-sub">Restaurant Website</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Payment Page -->
+                <div class="project-row">
+                    <div class="project-meta">
+                        <span class="project-num">04</span>
+                        <span class="project-tag">Frontend Development</span>
+                    </div>
+                    <div class="project-details">
+                        <h3>Payment Interface</h3>
+                        <p>A secure payment interface with form validation and user-friendly checkout process.
+                            University
+                            project showcasing frontend development skills.</p>
+                        <div class="project-stack">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Form Validation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="templetes/payment-showcase.html" id="payment-link" class="proj-link primary"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-visual payment-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content">
+                                <div class="ph-icon"><i class="fa-solid fa-credit-card"></i></div>
+                                <div class="ph-label">Payment Page</div>
+                                <div class="ph-sub">Secure Checkout</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Booking Website -->
+                <div class="project-row">
+                    <div class="project-meta">
+                        <span class="project-num">05</span>
+                        <span class="project-tag">Responsive Design</span>
+                    </div>
+                    <div class="project-details">
+                        <h3>Booking Platform</h3>
+                        <p>A responsive booking platform with intuitive user interface and mobile-friendly design for
+                            seamless reservation management.</p>
+                        <div class="project-stack">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="templetes/demo.html" class="proj-link primary"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i> View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-visual booking-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content">
+                                <div class="ph-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                <div class="ph-label">Booking Platform</div>
+                                <div class="ph-sub">Responsive Design</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: CM (Code Manager) -->
+                <div class="project-row">
+                    <div class="project-meta">
+                        <span class="project-num">06</span>
+                        <span class="project-tag">Open Source • CLI Tool</span>
+                    </div>
+                    <div class="project-details">
+                        <h3>CM — Code Manager</h3>
+                        <p>A command-line code management tool for organizing, searching, and managing code snippets and
+                            projects efficiently.</p>
+                        <div class="project-stack">
+                            <span>JavaScript</span><span>Node.js</span><span>CLI</span><span>Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ALightbolt4G/CM" target="_blank" class="proj-link primary"><i
+                                    class="fa-brands fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-visual cm-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content">
+                                <div class="ph-icon"><i class="fa-solid fa-terminal"></i></div>
+                                <div class="ph-label">CM</div>
+                                <div class="ph-sub">Code Manager CLI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: CM-lang -->
+                <div class="project-row">
+                    <div class="project-meta">
+                        <span class="project-num">07</span>
+                        <span class="project-tag">Programming Language</span>
+                    </div>
+                    <div class="project-details">
+                        <h3>CM-lang</h3>
+                        <p>A custom programming language implementation with lexer, parser, and interpreter. Built from
+                            scratch to understand language design concepts.</p>
+                        <div class="project-stack">
+                            <span>JavaScript</span><span>Language Design</span><span>Compiler</span><span>AST</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ALightbolt4G/CM-lang" target="_blank"
+                                class="proj-link primary"><i class="fa-brands fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-visual cmlang-visual">
+                        <div class="visual-frame">
+                            <div class="frame-bar"><span></span><span></span><span></span></div>
+                            <div class="frame-content">
+                                <div class="ph-icon"><i class="fa-solid fa-code"></i></div>
+                                <div class="ph-label">CM-lang</div>
+                                <div class="ph-sub">Programming Language</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CM-lang Playground (New Section) -->
+                <div class="project-row playground-row">
+                    <div class="project-meta">
+                        <span class="project-num">08</span>
+                        <div class="status-pills">
+                            <span class="status-pill beta">P-COMPILER</span>
+                            <span class="project-tag">Interactive</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="play-title">CM-lang Playground</h3>
+                        <p>Experience the power of CM-lang directly in your browser. Our pseudo-compiler simulates
+                            real-time
+                            execution of your code snippets.</p>
+                        <div class="playground-window glass-card">
+                            <div class="playground-header">
+                                <span class="file-name">main.cm</span>
+                                <button class="run-btn" id="runCmCode"><i class="fa-solid fa-play"></i> Run
+                                    Code</button>
+                            </div>
+                            <div class="playground-editor">
+                                <textarea id="cmCodeInput" spellcheck="false">fn main() {
+    let message = "Hello, CM-lang!";
+    println(message);
+
+    for (int i = 0; i < 5; i++) {
+        println("Iteration: ", i);
+    }
+}</textarea>
+                            </div>
+                            <div class="playground-output" id="cmOutput">
+                                <div class="output-placeholder">Output will appear here...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact-section widget" id="contact">
+            <div class="contact-inner">
+                <div class="section-header">
+                    <span class="section-num">05</span>
+                    <h2 data-i18n="section-05">Get In Touch</h2>
+                </div>
+                <p class="contact-tagline">Have a project in mind? Let's build something great together.</p>
+                <div class="contact-cards">
+                    <a href="tel:+201115228813" class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+201115228813</p>
+                        </div>
+                    </a>
+                    <a href="mailto:adham.hossam5020@gmail.com" class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>adham.hossam5020@gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adham-hossam-b4a317380" target="_blank" class="contact-card">
+                        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>Adham Hossam</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>Adham<span class="logo-bracket">/&gt;</span>
+            </a>
+            <p data-i18n="footer-made">Designed & Built by <span>Adham Hossam</span> © 2026</p>
+            <div class="footer-social">
+                <a href="https://github.com/ALightbolt4G" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/adham-hossam-b4a317380" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://youtube.com/@alightbolt4g295" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/alight.bolt.4g.16100" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Alert Modal -->
+    <div class="custom-alert" id="customAlert">
+        <div class="alert-box">
+            <button class="alert-close" id="closeAlert"><i class="fa-solid fa-xmark"></i></button>
+            <div class="alert-icon"><i class="fa-solid fa-lock"></i></div>
+            <h3 data-i18n="alert-title">University Project</h3>
+            <p data-i18n="alert-msg">هذا مشروع جامعي لم يتم نشره على الإنترنت بعد. يمكن عرضه خلال مقابلة.</p>
+            <button class="alert-btn" id="closeAlertBtn" data-i18n="alert-btn">حسناً</button>
+        </div>
+    </div>
+
+    <script src="scripts/mobile.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/gamify.js"></script>
+    <script src="scripts/terminal.js"></script>
+    <script src="scripts/translator.js"></script>
+    <script src="scripts/tech-radar.js"></script>
+    <script src="scripts/cmlang-snippet.js"></script>
+    <script src="scripts/effects.js"></script>
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
